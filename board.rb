@@ -5,7 +5,6 @@ class Board
 	def initialize
 		@comp = []
 		9.times { @comp << " " }		
-			# Space.new.status}
 	end
 
 	def display
