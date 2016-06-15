@@ -11,5 +11,6 @@ require_relative "service/intro.rb"
 require_relative "service/make_board.rb"
 require_relative "service/player_move.rb"
 require_relative "service/print_board.rb"
+require_relative "service/update_stats.rb"
 
 #Pry.start

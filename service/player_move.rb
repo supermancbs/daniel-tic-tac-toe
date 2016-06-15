@@ -17,11 +17,11 @@ class PlayerMove
   end 
 
   def valid_move? 
-    board[@move].value == " " && (@move > 0 && @move < 9) ? true : false
+    @board[@move].value == " " && (@move >= 0 && @move < 9) ? true : false
   end 
 
   def put_on_board
-    board[@move].value = @player.symbol
+    @board[@move].value = @player.symbol
   end 
 
   def run 
