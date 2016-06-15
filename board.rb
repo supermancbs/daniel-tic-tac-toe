@@ -2,7 +2,7 @@ class Board
 
 	attr_accessor :comp
 
-	def initialize
+	def initialize()
 		@comp = []
 		9.times { @comp << " " }
 	end
