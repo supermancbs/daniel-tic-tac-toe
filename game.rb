@@ -20,6 +20,8 @@ class Game
 		input_answer
 	end
 
+	private
+
 	def take_turns(player, computer, board)
 		loop do
 			break if Rules.won?(board) == true || Rules.filled?(board) == true 

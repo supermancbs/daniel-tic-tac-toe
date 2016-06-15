@@ -4,10 +4,10 @@ class Board
 
 	def initialize
 		@comp = []
-		9.times { @comp << " " }		
+		9.times { @comp << " " }
 	end
 
-	def display
+	def display # not reusable
 		puts "#{self.comp[0]} | #{self.comp[1]} | #{self.comp[2]}"
 		puts "----------"
 		puts "#{self.comp[3]} | #{self.comp[4]} | #{self.comp[5]}"

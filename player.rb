@@ -14,10 +14,12 @@ class Player
 	def turn(board)
 		puts "Choose a number from 1-9."
 		choose_move(board)
-		board.comp[@move - 1] = @symbol
+		set_piece(board)
 		puts "player turn"
 		board.display
 	end
+
+	private
 
 	def choose_move(board)
 		@move = gets.chomp.to_i
@@ -26,6 +28,10 @@ class Player
 			puts "wrong answer"
 			@move = gets.chomp.to_i
 		end
+	end
+
+	def set_piece(board)
+		board.comp[@move - 1] = @symbol
 	end
 
 	def choose_symbol

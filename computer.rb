@@ -8,10 +8,12 @@ class Computer
 
 	def turn(board)
 		choose_move(board)
-		board.comp[@move - 1] = @symbol
+		set_piece(board)
 		puts "computer's turn"
 		board.display
 	end
+
+	private
 
 	def choose_move(board)
 		@move = 0
@@ -19,5 +21,10 @@ class Computer
 			@move = rand(1..9)
 		end
 	end
+
+	def set_piece(board)
+		board.comp[@move - 1] = @symbol
+	end
+
 
 end
