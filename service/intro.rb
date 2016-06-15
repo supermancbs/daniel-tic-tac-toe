@@ -1,18 +1,28 @@
 class Intro
   attr_reader :player, :computer
-  #get player, and computer, and greet. End result: ready to start playing.
-  def initialize
-    puts "Here are the rules: ...."
+
+  def make_player
     puts "What is your name?"
     @player = Player.new(gets.chomp)
-    until @player.symbol
-    puts "Do you want X or O?"
+    until @player.symbol=="X" || @player.symbol=="O"
+     puts "Do you want X or O?"
+     @player.symbol = gets.chomp.upcase 
+    end 
+  end 
 
-  end
+  def make_computer
+    @computer = Computer.new
+    @player.symbol == "X" ? @computer.symbol="O" : @computer.symbol = "X"
+
+  end 
 
   def run 
+   make_player
+   make_computer
     {player: @player, computer: @computer}
   end 
+
+
 
 end 
 
