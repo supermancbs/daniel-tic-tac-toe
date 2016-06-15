@@ -12,9 +12,7 @@ class Rules
 	end
 
 	def self.won?(board)
-		x = @@winning_combs.select do |array|
-			board.comp[array[0]] == board.comp[array[1]] && board.comp[array[0]] == board.comp[array[2]] && board.comp[array[2]]!= " "
-		end
+		x = decide_winning_combination(board)
 		if x.size == 0
 			false
 		else
@@ -29,6 +27,12 @@ class Rules
 
 	def self.filled?(board)
 		true if !board.comp.include?(" ")
+	end
+
+	def self.decide_winning_combination(board)
+		@@winning_combs.select do |array|
+			board.comp[array[0]] == board.comp[array[1]] && board.comp[array[0]] == board.comp[array[2]] && board.comp[array[2]]!= " "
+		end
 	end
 
 end
