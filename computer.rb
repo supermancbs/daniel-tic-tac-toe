@@ -7,13 +7,17 @@ class Computer
 	end
 
 	def turn(board)
+		choose_move(board)
+		board.comp[@move - 1] = @symbol
+		puts "computer's turn"
+		board.display
+	end
+
+	def choose_move(board)
 		@move = 0
 		until Rules.valid?(self, board)
 			@move = rand(1..9)
 		end
-		board.comp[@move - 1] = @symbol
-		puts "computer's turn"
-		board.display
 	end
 
 end
